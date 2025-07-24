@@ -9,8 +9,22 @@
 }
 
 /* Class Selectors */
+.workspace {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .title {
-  text-align: center;
+  color: #333;
+}
+
+.size-button {
+  margin-left: auto;
 }
 
 .grid-container {
@@ -20,14 +34,12 @@
   border: 5px solid #333;
   border-right-width: 4px;
   border-bottom-width: 4px;
-  width: 50%;
   aspect-ratio: 1 / 1;
 }
 
 .grid-square {
   border-right: 1px solid #333;
   border-bottom: 1px solid #333;
-  width: calc(100% / 16);
 }
 
 .hovered {
