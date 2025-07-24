@@ -26,11 +26,9 @@ function createGrid(gridSize) {
 
 function draw(event) {
   const target = event.target;
-
-  if (!target.classList.contains('hovered')) {
-    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-    target.style.backgroundColor = randomColor;
-  }
+  
+  const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  target.style.backgroundColor = randomColor;
 }
 
 function removeEventHandler(event) {
