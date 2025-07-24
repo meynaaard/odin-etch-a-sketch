@@ -24,11 +24,21 @@ function createGrid(gridSize) {
   });
 }
 
+let opacity = 0.1;
+let drawInvocationCount = 0;
+
 function draw(event) {
   const target = event.target;
 
+  if (drawInvocationCount < 10) {
+    console.log(opacity);
+    target.style.opacity = opacity;
+    opacity += 0.1;
+  }
+  
   const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
   target.style.backgroundColor = randomColor;
+  drawInvocationCount++;
 }
 
 function removeEventHandler(event) {
