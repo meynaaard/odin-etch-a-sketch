@@ -9,24 +9,24 @@ function createGrid(gridSize) {
       const gridSquare = document.createElement('div');
       gridContainer.appendChild(gridSquare);
       gridSquare.classList.add('grid-square');
-      gridSquare.style.width = `calc(100% / ${gridSize})`;
     }
   }
+
+  document.styleSheets[0].insertRule(
+    `.grid-square { width: calc(100% / ${gridSize}) }`
+  );
   
   const gridSquares = gridContainer.querySelectorAll('.grid-square');
 
   gridSquares.forEach(gridSquare => {
     gridSquare.addEventListener('mouseenter', draw);
-  });
-
-  gridSquares.forEach(gridSquare => {
     gridSquare.addEventListener('mouseleave', removeEventHandler);
   });
 }
 
 function draw(event) {
   const target = event.target;
-  
+
   const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
   target.style.backgroundColor = randomColor;
 }
