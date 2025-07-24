@@ -28,7 +28,8 @@ function draw(event) {
   const target = event.target;
 
   if (!target.classList.contains('hovered')) {
-    target.classList.add('hovered');
+    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    target.style.backgroundColor = randomColor;
   }
 }
 
@@ -37,6 +38,10 @@ function removeEventHandler(event) {
 
   target.removeEventListener('mouseenter', draw);
   target.removeEventListener('mouseleave', removeEventHandler);
+}
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
 }
 
 sizeButton.addEventListener('click', () => {
